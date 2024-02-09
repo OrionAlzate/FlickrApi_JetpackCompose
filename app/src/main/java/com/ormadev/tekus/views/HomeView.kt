@@ -1,5 +1,6 @@
 package com.ormadev.tekus.views
 
+import android.util.Log
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,7 +29,9 @@ fun HomeView(viewModel: FlickrViewModel) {
                 && item.imageUrl != null
                 && !item.imageUrl.equals("")
                 ) {
-                FlickrCard(item)
+                FlickrCard(item){
+                    Log.i("FlickrCard", "${item.title}\n working! :)")
+                }
                 Text(text = item.title,
                     textAlign = TextAlign.Center,
                     modifier = Modifier

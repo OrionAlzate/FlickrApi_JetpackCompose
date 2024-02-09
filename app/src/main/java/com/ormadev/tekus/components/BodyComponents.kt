@@ -18,15 +18,15 @@ import com.ormadev.tekus.model.PhotoItemResponse
 
 @Composable
 fun FlickrCard(
-    photoItemResponse: PhotoItemResponse
-//    , onClick: () -> Unit
+    photoItemResponse: PhotoItemResponse,
+    onClick: () -> Unit
 ) {
     Card(
         shape = RoundedCornerShape(6.dp),
         modifier = Modifier
             .padding(10.dp)
             .shadow(40.dp)
-//            .clickable { onClick() }
+            .clickable { onClick() }
     ) {
         Column {
             FlickrImage(image = photoItemResponse.imageUrl)
