@@ -11,7 +11,6 @@ import retrofit2.http.Path
 
 interface ApiFlickr {
 
-
     @GET(COMLETE_ENDPOINT)
     suspend fun getPhoto() : Response<FlickrResponse>
 

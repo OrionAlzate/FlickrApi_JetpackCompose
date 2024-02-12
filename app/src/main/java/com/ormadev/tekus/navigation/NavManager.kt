@@ -37,6 +37,5 @@ fun NavManager(viewModel: FlickrViewModel) {
             FlickrImageView(viewModel, navController, title, imageUrl)
         }
 
-
     }
 }

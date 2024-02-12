@@ -40,8 +40,7 @@ fun FlickrImageView(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(CUSTOM_BACKGROUND))
-            .fillMaxWidth(),
+            .background(Color(CUSTOM_BACKGROUND)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         item {

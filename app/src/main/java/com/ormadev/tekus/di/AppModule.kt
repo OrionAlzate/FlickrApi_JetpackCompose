@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-
     @Singleton
     @Provides
     fun providesRetrofit(): Retrofit{
@@ -29,6 +28,5 @@ object AppModule {
     fun providesApiFlickr(retrofit: Retrofit):ApiFlickr {
         return retrofit.create(ApiFlickr::class.java)
     }
-
 
 }
