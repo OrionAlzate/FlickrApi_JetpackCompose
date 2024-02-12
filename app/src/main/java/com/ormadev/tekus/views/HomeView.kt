@@ -1,6 +1,7 @@
 package com.ormadev.tekus.views
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -12,16 +13,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.ormadev.tekus.components.FlickrCard
+import com.ormadev.tekus.util.Constants.Companion.CUSTOM_BACKGROUND
 import com.ormadev.tekus.viewModel.FlickrViewModel
+import java.net.URLEncoder
 
 @Composable
-fun HomeView(viewModel: FlickrViewModel) {
+fun ContentHomeView(viewModel: FlickrViewModel, navController: NavController) {
 
     val flickrImage by viewModel.flickrResponse.collectAsState()
-    LazyColumn() {
+    LazyColumn(
+        modifier = Modifier
+            .background(Color(CUSTOM_BACKGROUND))
+
+    ) {
         items(flickrImage) { item ->
             if (
                 item.title != null
@@ -29,20 +40,35 @@ fun HomeView(viewModel: FlickrViewModel) {
                 && item.imageUrl != null
                 && !item.imageUrl.equals("")
                 ) {
+
+                Spacer(modifier = Modifier
+                    .height(5.dp))
+
                 FlickrCard(item){
+                    //onClick acá
                     Log.i("FlickrCard", "${item.title}\n working! :)")
+//                    navController.navigate("FlickrImageView/${item.title}/${item.imageUrl}")
+
+
+                    val encodedTitle = URLEncoder.encode(item.title, "UTF-8")
+                    val encodedimageUrl = URLEncoder.encode(item.imageUrl, "UTF-8")
+
+                    navController.navigate("FlickrImageView/$encodedTitle/($encodedimageUrl)")
+
                 }
-                Text(text = item.title,
+
+                Text(
+                    text = item.title,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
-                        .fillMaxWidth()
-
+                        .fillMaxWidth(),
+                    color = Color.White,
+                    fontWeight = FontWeight.ExtraBold,
+                    fontSize = 20.sp
                     )
                 Spacer(modifier = Modifier
-                    .padding(10.dp)
                     .height(20.dp))
             }
-
         }
     }
 }

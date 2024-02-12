@@ -46,8 +46,6 @@ fun FlickrImage(image: String) {
         modifier = Modifier
             .fillMaxWidth()
             .height(250.dp)
-
     )
-
 
 }

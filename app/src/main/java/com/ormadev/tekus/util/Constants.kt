@@ -9,7 +9,7 @@ class Constants {
         const val API_KEY = "40bd373bb6a19a078023b06af055d03c"
         const val EXTRAS = "&extras=url_h&format=json&nojsoncallback=1"
         const val COMLETE_ENDPOINT  = "?method=flickr.interestingness.getList&api_key=40bd373bb6a19a078023b06af055d03c&extras=url_h&format=json&nojsoncallback=1"
+        const val CUSTOM_BACKGROUND = 0xFF868686
     }
 }
 
-// https://www.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=40bd373bb6a19a078023b06af055d03c&extras=url_h&format=json&nojsoncallback=1
