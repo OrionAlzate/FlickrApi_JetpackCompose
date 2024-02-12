@@ -46,8 +46,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     var checkConnection = CheckConnection()
 
-                    val check : Boolean = checkConnection.CheckNetwork(this)
-                    
+//                    val check : Boolean = checkConnection.CheckNetwork(this)
+                    val check : Boolean = checkConnection.isNetworkAvailable(this)
+
                     if(check){
                         
                         NavManager(viewModel)
