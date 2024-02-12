@@ -30,10 +30,8 @@ fun NavManager(viewModel: FlickrViewModel) {
                 navArgument("imageUrl"){type = NavType.StringType})
             ){
 
-            val encodedTitle : String = (it.arguments?.getString("title") ?: "").toString()
+            val title : String = (it.arguments?.getString("title") ?: "").toString()
             val encodedImageUrl : String = (it.arguments?.getString("imageUrl") ?: "").toString()
-
-            val title : String = Uri.decode(encodedTitle)
             val imageUrl : String = Uri.decode(encodedImageUrl)
 
             FlickrImageView(viewModel, navController, title, imageUrl)

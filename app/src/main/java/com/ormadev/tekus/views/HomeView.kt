@@ -45,15 +45,11 @@ fun ContentHomeView(viewModel: FlickrViewModel, navController: NavController) {
                     .height(5.dp))
 
                 FlickrCard(item){
-                    //onClick acá
-                    Log.i("FlickrCard", "${item.title}\n working! :)")
-//                    navController.navigate("FlickrImageView/${item.title}/${item.imageUrl}")
-
-
-                    val encodedTitle = URLEncoder.encode(item.title, "UTF-8")
+                    //onClick here
+//                    Log.i("FlickrCard", "${item.title}\n working! :)")
                     val encodedimageUrl = URLEncoder.encode(item.imageUrl, "UTF-8")
 
-                    navController.navigate("FlickrImageView/$encodedTitle/($encodedimageUrl)")
+                    navController.navigate("FlickrImageView/${item.title}/$encodedimageUrl")
 
                 }
 
