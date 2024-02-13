@@ -28,6 +28,7 @@ import java.net.URLEncoder
 fun ContentHomeView(viewModel: FlickrViewModel, navController: NavController) {
 
     val flickrImage by viewModel.flickrResponse.collectAsState()
+
     LazyColumn(
         modifier = Modifier
             .background(Color(CUSTOM_BACKGROUND))
@@ -45,7 +46,6 @@ fun ContentHomeView(viewModel: FlickrViewModel, navController: NavController) {
                     .height(5.dp))
 
                 FlickrCard(item){
-                    //onClick here
 //                    Log.i("FlickrCard", "${item.title}\n working! :)")
                     val encodedimageUrl = URLEncoder.encode(item.imageUrl, "UTF-8")
 
