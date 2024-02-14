@@ -47,8 +47,9 @@ class MainActivity : ComponentActivity() {
 
                     if(check){
 
-                        NavManager(viewModel)
+                    NavManager(viewModel)
 //                        CacheHomeView(viewModel) // TestView
+
                     }
                     else{
                         Column(
@@ -66,8 +67,8 @@ class MainActivity : ComponentActivity() {
                             )
                         }
 
-                        // llamar a CacheHomeView , configurar primero Glide
-//                        CacheHomeView(viewModel)
+////                        CacheHomeView(viewModel)
+
                     }
                 }
             }

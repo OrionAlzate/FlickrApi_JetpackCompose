@@ -1,5 +1,6 @@
 package com.ormadev.tekus.di
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.ormadev.tekus.data.ApiFlickr
@@ -45,5 +46,11 @@ object AppModule {
     @Singleton
     @Provides
     fun providePersistenceEntityDao(db:PersistenceDatabase):PersistenceDao = db.persistenceDao()
+
+    @Provides
+    @Singleton
+    fun provideApplicationContext(application: Application): Context {
+        return application.applicationContext
+    }
 
 }

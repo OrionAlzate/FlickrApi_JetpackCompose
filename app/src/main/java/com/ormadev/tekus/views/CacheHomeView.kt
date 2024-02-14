@@ -1,5 +1,6 @@
 package com.ormadev.tekus.views
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -60,8 +61,8 @@ fun ContentCacheHomeView(viewModel: FlickrViewModel, pad: PaddingValues) {
     ) {
         items(persistenceList) { item ->
             if (
-                item.title != null
-                && !item.title.equals("")
+                item.title != null &&
+                !item.title.equals("")
                 && item.imageUrl != null
                 && !item.imageUrl.equals("")
             ) {
@@ -70,7 +71,7 @@ fun ContentCacheHomeView(viewModel: FlickrViewModel, pad: PaddingValues) {
                     .height(5.dp))
 
                 PersistenceCard(item){
-//                    Log.i("PersistenceCard", "${item.title}\n working! :)")
+                    Log.i("PersistenceCard", "${item.title}\n working! :)")
                 }
                 Text(
                     text = item.title,

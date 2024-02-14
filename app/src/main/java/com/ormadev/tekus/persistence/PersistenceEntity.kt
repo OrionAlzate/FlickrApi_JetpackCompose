@@ -10,7 +10,7 @@ data class PersistenceEntity(
 
     @PrimaryKey(autoGenerate = true) var dbId : Int = 0,
     @ColumnInfo(name = "title") val title: String,
-    @ColumnInfo(name = "imageUrl") val imageUrl: String,
-    @ColumnInfo(name = "localImagePath") val localImagePath : String?
+    @ColumnInfo(name = "imageUrl") val imageUrl: String
+//    @ColumnInfo(name = "localImagePath") val localImagePath : String?
 
 ) {}

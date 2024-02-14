@@ -1,10 +1,7 @@
 package com.ormadev.tekus.data
 
 import com.ormadev.tekus.model.FlickrResponse
-import com.ormadev.tekus.util.Constants.Companion.API_KEY
 import com.ormadev.tekus.util.Constants.Companion.COMLETE_ENDPOINT
-import com.ormadev.tekus.util.Constants.Companion.ENDPOINT
-import com.ormadev.tekus.util.Constants.Companion.EXTRAS
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -14,6 +14,10 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
+import com.bumptech.glide.integration.compose.placeholder
+import com.ormadev.tekus.R
 import com.ormadev.tekus.model.PhotoItemResponse
 
 @Composable
@@ -34,10 +38,18 @@ fun FlickrCard(
     }
 }
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun FlickrImage(image: String) {
 
-    val flikrImage = rememberImagePainter(data = image)
+    val flikrImage = rememberImagePainter(
+        data = image,
+        builder = {
+            crossfade(true)
+            placeholder(R.drawable.baseline_broken_image_24)
+        }
+
+    )
 
     Image(
         painter = flikrImage,
@@ -47,5 +59,7 @@ fun FlickrImage(image: String) {
             .fillMaxWidth()
             .height(250.dp)
     )
+
+
 
 }

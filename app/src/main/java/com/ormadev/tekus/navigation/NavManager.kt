@@ -8,10 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.ormadev.tekus.viewModel.FlickrViewModel
-import com.ormadev.tekus.views.ContentHomeView
 import com.ormadev.tekus.views.FlickrImageView
 import com.ormadev.tekus.views.HomeView
-import java.net.URLDecoder
 
 @Composable
 fun NavManager(viewModel: FlickrViewModel) {

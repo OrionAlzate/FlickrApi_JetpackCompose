@@ -1,13 +1,8 @@
 package com.ormadev.tekus.viewModel
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ormadev.tekus.model.PhotoItemResponse
-import com.ormadev.tekus.model.PhotoResponse
 import com.ormadev.tekus.persistence.PersistenceEntity
 import com.ormadev.tekus.repository.FlickrRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
