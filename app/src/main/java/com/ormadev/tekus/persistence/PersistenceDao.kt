@@ -10,13 +10,11 @@ import androidx.room.Query
 
 @Dao
 interface PersistenceDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(persistence: PersistenceEntity)
 
-    @Query("SELECT * FROM flickr_response ORDER BY dbId DESC")
-    fun getAll() : LiveData<List<PersistenceEntity>>
-
-    @Delete
-    fun delete(persistence: PersistenceEntity)
+    @Query("SELECT * FROM flickr_response ORDER BY dbId ASC")
+    fun getAll() : List<PersistenceEntity>
 
 }

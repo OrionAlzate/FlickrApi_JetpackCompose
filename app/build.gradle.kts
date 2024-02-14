@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -62,6 +64,9 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     testImplementation("junit:junit:4.13.2")
+
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.1")
+
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
@@ -89,5 +94,11 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
+
+    // Glide
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+    kapt ("com.github.bumptech.glide:compiler:4.14.2")
+    implementation("com.github.bumptech.glide:annotations:4.14.2")
+    implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
 
 }

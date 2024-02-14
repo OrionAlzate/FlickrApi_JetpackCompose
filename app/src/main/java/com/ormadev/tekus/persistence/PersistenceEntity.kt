@@ -8,8 +8,9 @@ import androidx.room.PrimaryKey
 @Entity("flickr_response")
 data class PersistenceEntity(
 
+    @PrimaryKey(autoGenerate = true) var dbId : Int = 0,
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "imageUrl") val imageUrl: String,
-    @PrimaryKey(autoGenerate = true) var dbId : Int = 0
+    @ColumnInfo(name = "localImagePath") val localImagePath : String?
 
 ) {}

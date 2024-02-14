@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,17 +16,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.Center
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.ormadev.tekus.checkConnection.CheckConnection
 import com.ormadev.tekus.navigation.NavManager
 import com.ormadev.tekus.ui.theme.TekusTheme
 import com.ormadev.tekus.viewModel.FlickrViewModel
+import com.ormadev.tekus.views.CacheHomeView
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -46,12 +43,12 @@ class MainActivity : ComponentActivity() {
                 ) {
                     var checkConnection = CheckConnection()
 
-//                    val check : Boolean = checkConnection.CheckNetwork(this)
                     val check : Boolean = checkConnection.CheckNetwork(this)
 
                     if(check){
-                        
+
                         NavManager(viewModel)
+//                        CacheHomeView(viewModel) // TestView
                     }
                     else{
                         Column(
@@ -68,6 +65,9 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.size(50.dp)
                             )
                         }
+
+                        // llamar a CacheHomeView , configurar primero Glide
+//                        CacheHomeView(viewModel)
                     }
                 }
             }

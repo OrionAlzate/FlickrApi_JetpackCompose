@@ -1,7 +1,6 @@
 package com.ormadev.tekus.di
 
 import android.content.Context
-import androidx.room.PrimaryKey
 import androidx.room.Room
 import com.ormadev.tekus.data.ApiFlickr
 import com.ormadev.tekus.data.PersistenceDatabase
@@ -45,6 +44,6 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun providesPersistenceDatabase(db:PersistenceDatabase):PersistenceDao = db.persistenceDao()
+    fun providePersistenceEntityDao(db:PersistenceDatabase):PersistenceDao = db.persistenceDao()
 
 }
